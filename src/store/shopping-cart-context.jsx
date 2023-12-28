@@ -5,7 +5,11 @@ export const CartContext = createContext({
 });
 
 const CartContextProvider = ({ children }) => {
-  return <CartContext.Provider>{children}</CartContext.Provider>;
+  return (
+    <CartContext.Provider value={{ items: [] }}>
+      {children}
+    </CartContext.Provider>
+  );
 };
 
 export default CartContextProvider;
